@@ -11,12 +11,15 @@
         <h2 class="h3">Gestión de Clientes</h2>
         <div>
             <asp:Label ID="lblUsuario" runat="server" CssClass="me-2 fw-semibold" />
+            <asp:HyperLink ID="lnkLogout" runat="server" NavigateUrl="~/Logout.aspx">Cerrar sesión</asp:HyperLink>
             
         </div>
     </div>
 
     <!-- Mensaje de error -->
     <asp:Label ID="lblError" runat="server" CssClass="alert alert-danger w-100" Visible="false" />
+
+
 
     <!-- Card del listado -->
     <div class="card shadow-sm mb-4">

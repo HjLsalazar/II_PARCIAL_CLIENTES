@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="LOGIN.aspx.vb" Inherits="II_PARCIAL_CLIENTES.LOGIN" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-      
+
     <div class="card shadow-lg p-4" style="max-width:400px;width:100%;">
           <div class="d-flex align-items-center py-4 bg-body-tertiary">
     <main class="form-signin w-100 m-auto">

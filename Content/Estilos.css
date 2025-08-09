@@ -1,0 +1,98 @@
+﻿/* ======== ESTILO GENERAL ======== */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======== CONTENEDOR DEL FORMULARIO ======== */
+.center-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* ======== TARJETA ======== */
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    padding: 25px;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ======== ANIMACIÓN ENTRADA ======== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======== CAMPOS DE TEXTO ======== */
+.form-control {
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+    .form-control:focus {
+        border-color: #2575fc;
+        box-shadow: 0 0 8px rgba(37, 117, 252, 0.4);
+    }
+
+/* ======== BOTONES ======== */
+.btn-primary {
+    background: #2575fc;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background: #1a5edb;
+    }
+
+/* ======== TABLAS (para CLIENTES) ======== */
+table {
+    width: 400%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+    table th {
+        background: #2575fc;
+        color: white;
+        padding: 50px;
+        text-align: left;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    table tr:hover {
+        background-color: rgba(37, 117, 252, 0.1);
+    }
+
