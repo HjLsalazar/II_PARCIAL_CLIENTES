@@ -247,7 +247,7 @@
     </Compile>
     <Compile Include="LOGIN.aspx.vb">
       <DependentUpon>LOGIN.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MODEL\CLIENTES.vb" />
     <Compile Include="MODEL\PERSONAS.vb" />
