@@ -6,6 +6,7 @@ Namespace II_PARCIAL_CLIENTES
     Partial Public Class Clientes
         Inherits System.Web.UI.Page
 
+        ' Repositorio para manejar la lógica de acceso a datos
         Private ReadOnly repo As New ClienteRepository()
 
         'Control de errores
@@ -20,7 +21,7 @@ Namespace II_PARCIAL_CLIENTES
         Protected gvClientes As GridView
 
 
-
+        ' Evento de carga de la página
         Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
             If Session("Usuario") Is Nothing Then
                 Response.Redirect("~/LOGIN.aspx")
@@ -34,6 +35,7 @@ Namespace II_PARCIAL_CLIENTES
             End If
         End Sub
 
+        ' Método para cargar los datos en el GridView
         Private Sub CargarGrid()
             Try
                 gvClientes.DataSource = repo.GetAll()
@@ -45,11 +47,13 @@ Namespace II_PARCIAL_CLIENTES
             End Try
         End Sub
 
+        ' Evento para manejar la selección de una fila en el GridView
         Protected Sub gvClientes_SelectedIndexChanged(sender As Object, e As EventArgs)
             lblError.Visible = False
             Dim row As GridViewRow = gvClientes.SelectedRow
-            If row Is Nothing Then Return
 
+            ' Verificar si la fila seleccionada es válida
+            If row Is Nothing Then Return
             hfClienteId.Value = gvClientes.SelectedDataKey.Value.ToString()
             txtNombre.Text = Server.HtmlDecode(row.Cells(1).Text)
             txtApellido1.Text = Server.HtmlDecode(row.Cells(2).Text)
@@ -58,6 +62,7 @@ Namespace II_PARCIAL_CLIENTES
             txtEmail.Text = Server.HtmlDecode(row.Cells(5).Text)
         End Sub
 
+        ' Evento para manejar la eliminación de una fila en el GridView
         Protected Sub gvClientes_RowDeleting(sender As Object, e As GridViewDeleteEventArgs)
             lblError.Visible = False
             Try
@@ -72,10 +77,13 @@ Namespace II_PARCIAL_CLIENTES
             e.Cancel = True
         End Sub
 
+        ' Evento para manejar la edición de una fila en el GridView
         Protected Sub btnGuardar_Click(sender As Object, e As EventArgs)
+            ' Validar los campos del formulario
             lblError.Visible = False
             If Not Page.IsValid Then Return
 
+            ' Validar campos obligatorios y formato de email
             If String.IsNullOrWhiteSpace(txtNombre.Text) OrElse
                String.IsNullOrWhiteSpace(txtApellido1.Text) OrElse
                String.IsNullOrWhiteSpace(txtTelefono.Text) Then
@@ -84,12 +92,14 @@ Namespace II_PARCIAL_CLIENTES
                 Return
             End If
 
+            ' Validar formato de email
             If Not System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, "^[^@\s]+@[^@\s]+\.[^@\s]+$") Then
                 lblError.Text = "Email inválido."
                 lblError.Visible = True
                 Return
             End If
 
+            ' Guardar o actualizar el cliente
             Try
                 If String.IsNullOrEmpty(hfClienteId.Value) Then
                     repo.Insert(txtNombre.Text.Trim(), txtApellido1.Text.Trim(), txtApellido2.Text.Trim(),
@@ -107,12 +117,14 @@ Namespace II_PARCIAL_CLIENTES
             End Try
         End Sub
 
+        ' Evento para manejar la cancelación de la edición
         Protected Sub btnCancelar_Click(sender As Object, e As EventArgs)
             lblError.Visible = False
             LimpiarFormulario()
             gvClientes.SelectedIndex = -1
         End Sub
 
+        ' Método para limpiar el formulario
         Private Sub LimpiarFormulario()
             hfClienteId.Value = ""
             txtNombre.Text = ""

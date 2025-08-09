@@ -88,6 +88,7 @@
                     ErrorMessage="Teléfono es obligatorio" Display="Dynamic" />
             </div>
 
+
             <div class="col-12">
                 <div class="form-floating">
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Email" />
