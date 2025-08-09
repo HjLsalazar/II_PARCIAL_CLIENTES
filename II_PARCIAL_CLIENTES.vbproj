@@ -217,12 +217,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="App_Data\DATA\ClienteRepository.vb" />
+    <Compile Include="BasePage.vb" />
     <Compile Include="CLIENTES.aspx.designer.vb">
       <DependentUpon>CLIENTES.aspx</DependentUpon>
     </Compile>
     <Compile Include="CLIENTES.aspx.vb">
       <DependentUpon>CLIENTES.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contact.aspx.designer.vb">
       <DependentUpon>Contact.aspx</DependentUpon>

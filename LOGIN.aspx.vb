@@ -1,7 +1,8 @@
-﻿Imports System
-Imports System.Data
-Imports System.Data.Sql
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
+Imports System.Configuration
+Imports System.Web.UI
+Imports System.Web.UI.WebControls
+
 Public Class LOGIN
     Inherits System.Web.UI.Page
 
