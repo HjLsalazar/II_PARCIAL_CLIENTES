@@ -75,7 +75,7 @@ body {
 
 /* ======== TABLAS (para CLIENTES) ======== */
 table {
-    width: 400%;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
 }
