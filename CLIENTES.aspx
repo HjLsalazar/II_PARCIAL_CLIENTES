@@ -11,8 +11,11 @@
         <h2 class="h3">Gestión de Clientes</h2>
         <div>
             <asp:Label ID="lblUsuario" runat="server" CssClass="me-2 fw-semibold" />
-            <asp:HyperLink ID="lnkLogout" runat="server" NavigateUrl="~/Logout.aspx">Cerrar sesión</asp:HyperLink>
-            
+            <asp:HyperLink ID="lnkLogout" runat="server" NavigateUrl="~/Logout.aspx" CssClass="btn-logout">
+    Cerrar sesión
+            </asp:HyperLink>
+
+
         </div>
     </div>
 
@@ -108,8 +111,8 @@
         </div>
 
         <div class="d-flex gap-2 mt-3">
-            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardar_Click" />
-            <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-secondary" Text="Cancelar" CausesValidation="False" OnClick="btnCancelar_Click" />
+            <asp:Button ID="btnGuardar" runat="server" CssClass=" btn-primary" Text="Guardar" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnCancelar" runat="server" CssClass=" btn-secondary" Text="Cancelar" CausesValidation="False" OnClick="btnCancelar_Click" />
         </div>
     </div>
 

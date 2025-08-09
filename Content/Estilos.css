@@ -73,6 +73,35 @@ body {
         background: #1a5edb;
     }
 
+/* ===== BOTÓN LOGOUT ===== */
+.btn-logout {
+    background: #ff4d4d; 
+    color: white; 
+    padding: 10px 18px; 
+    border-radius: 6px; 
+    font-size: 15px; 
+    font-weight: bold;
+    text-decoration: none; 
+    display: inline-block; 
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+    
+    .btn-logout:hover {
+        background: #e60000; 
+        transform: scale(1.05); 
+    }
+
+    
+    .btn-logout:active {
+        background: #cc0000; 
+        transform: scale(0.98); 
+    }
+    .btn-logout:active {
+        background: #cc0000; 
+        transform: scale(0.98); 
+    }
+
 /* ======== TABLAS (para CLIENTES) ======== */
 table {
     width: 100%;
