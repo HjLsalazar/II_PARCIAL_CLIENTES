@@ -1,4 +1,9 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="CLIENTES.aspx.vb" Inherits="II_PARCIAL_CLIENTES.CLIENTES" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false"
+    MasterPageFile="~/Site.Master"
+    CodeBehind="CLIENTES.aspx.vb"
+    Inherits="II_PARCIAL_CLIENTES.II_PARCIAL_CLIENTES.Clientes" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- Encabezado / usuario -->
@@ -6,7 +11,7 @@
         <h2 class="h3">Gestión de Clientes</h2>
         <div>
             <asp:Label ID="lblUsuario" runat="server" CssClass="me-2 fw-semibold" />
-            <a class="btn btn-outline-secondary btn-sm" href="Logout.aspx">Cerrar sesión</a>
+            
         </div>
     </div>
 
