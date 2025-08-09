@@ -1,13 +1,22 @@
 ﻿/* ======== ESTILO GENERAL ======== */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
     margin: 0;
     padding: 0;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fondoPastel 15s ease-in-out infinite alternate;
+}
+
+
+@keyframes fondoPastel {
+    0% { background-color: #b3e5fc; }  /* celeste pastel */
+    25% { background-color: #c8e6c9; } /* verde pastel */
+    50% { background-color: #fff9c4; } /* amarillo pastel */
+    75% { background-color: #f8bbd0; } /* rosa pastel */
+    100% { background-color: #d1c4e9; } /* lila pastel */
 }
 
 /* ======== CONTENEDOR DEL FORMULARIO ======== */
