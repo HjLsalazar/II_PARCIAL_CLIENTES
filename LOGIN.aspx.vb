@@ -16,21 +16,21 @@ Public Class LOGIN
 
     ' Click en "Ingresar"
     Protected Sub btnIngresar_Click(sender As Object, e As EventArgs)
-        lblLoginError.Text = "" ' Limpia mensaje de error
+        lblError.Text = "" ' Limpia mensaje de error
 
         ' Toma valores del formulario
         Dim email As String = txtEmail.Text.Trim()
-        Dim clave As String = txtClave.Text.Trim()
+        Dim clave As String = txtContraseña.Text.Trim()
 
         ' Validaciones simples del lado servidor
         If String.IsNullOrWhiteSpace(email) OrElse String.IsNullOrWhiteSpace(clave) Then
-            lblLoginError.Text = "Ingrese email y contraseña."
+            lblError.Text = "Ingrese email y contraseña."
             Return
         End If
 
         ' ADO.NET: validar credenciales
         Try
-            Using cn As SqlConnection = DatabaseHelper.GetConnection()
+            Using cn As SqlConnection = (New SqlConnection(ConfigurationManager.ConnectionStrings("Login").ConnectionString))
                 Using cmd As New SqlCommand("
                     SELECT TOP 1 Email
                     FROM Usuarios
@@ -48,13 +48,13 @@ Public Class LOGIN
                         Session("Usuario") = Convert.ToString(result)
                         Response.Redirect("~/Clientes.aspx")
                     Else
-                        lblLoginError.Text = "Credenciales inválidas."
+                        lblError.Text = "Credenciales inválidas."
                     End If
                 End Using
             End Using
         Catch ex As Exception
             ' Error controlado (muestra mensaje genérico)
-            lblLoginError.Text = "Error al iniciar sesión: " & ex.Message
+            lblError.Text = "Error al iniciar sesión: " & ex.Message
         End Try
     End Sub
 End Class
